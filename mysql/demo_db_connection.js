@@ -9,4 +9,10 @@ var conn = mysql.createConnection({
 conn.connect(function(err){
 	if (err) throw(err);
 	console.log("Connected!");
+	var sql = "SELECT * FROM stuff.mountain_bikes";
+	conn.query(sql,function(err,result){
+		if (err) throw err;
+		console.log("Result: ");
+		console.log(result);
+	});
 });
